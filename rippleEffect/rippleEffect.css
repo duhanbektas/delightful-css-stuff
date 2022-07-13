@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    outline:none;
+    box-sizing:border-box;
+}
+
+html, body {
+    display:grid;
+    height:100%;
+    place-items: center;
+    text-align:center;
+}
+
+.wrapper {
+    background: #fff;
+    padding: 20px 30px;
+}
+
+.wrapper .txt {
+    font-size:35px;
+    font-weight: bolder;
+}
+
+.wrapper .btns {
+    display:flex;
+    margin: 30px 0;
+}
+
+.btns a{
+    position: relative;
+    margin: 0 15px;
+    height:60px;
+    width:240px;
+    display:block;
+    line-height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+}
+
+.btns a:first-child {
+    background: rgb(51,156,255);
+}
+
+.btns a:last-child {
+    background: rgb(140,0,255);
+}
+
+
+.btns a>span {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: ripples 0.6s linear infinite;
+}
+
+
+
+@keyframes ripples {
+    0% {width: 0px; height:0px; opacity:0.5;}
+    100% {width: 500px; height:500px; opacity:0.1;}
+}
+
+
+
+.btns span {
+    position: absolute;
+    border-radius: 50%;
+    /* To make it round */
+    background-color: rgba(0, 0, 0, 0.3);
+
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    /* for positioning */
+    margin-left: -50px;
+
+    animation: ripple 1s;
+    opacity: 0;
+}
+
+/* Add animation */
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
